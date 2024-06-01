@@ -14,9 +14,11 @@ export const Nav = styled.nav`
 
 `
 
-export const Ul = styled.ul`;
-        display: flex;
-        flex-flow: row nowrap;
+export const Ul = styled.ul`
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+
     a {
         text-decoration: none;
         color: inherit;
@@ -43,16 +45,30 @@ export const Ul = styled.ul`;
 `
 
 
-export const BurguerStyle = styled.div`
+type BurgerProps = {
+    open: boolean;
+  };
+
+
+export const BurguerStyle = styled.div<BurgerProps>`
     width: 2rem;
     height: 2rem;
     position: fixed;    
     top: 15px;
-    right: 20px; 
+    right: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+
     div{
         width: 2rem;
         height: 0.25rem;
-        background-color: #333;
+        background-color: ${({open}) => (open ? '#ccc' : '#333')};
+        border-radius: 10px;
+
+        &:nth-child(1){
+            transform: ${({open}) => (open ? 'rotate(45deg)' : 'rotate(0)')};
+        }
     }
 
 `
