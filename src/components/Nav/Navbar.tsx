@@ -1,5 +1,4 @@
 import {Nav} from "./style.ts";
-import RightNav from "./RightNav.tsx";
 import Burguer from "./Burguer.tsx";
 
 const Navbar = () => {
@@ -9,7 +8,6 @@ const Navbar = () => {
                 <h1>Navbar</h1>
             </div>
             <Burguer />
-            <RightNav />
         </Nav>
 );
 }
